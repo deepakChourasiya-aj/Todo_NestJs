@@ -24,31 +24,33 @@ export class TodoController {
   }
 
   @Get()
-  findAll(@Query() query: object) {
-    return this.todoService.findAll(query);
+  findAll() {
+    return this.todoService.findAll();
   }
 
   @Get(':id')
   async findOne(@Param() idDto: IdDto) {
     const todo = await this.todoService.findOne(idDto);
-    if (todo.length > 0) {
+    if (todo) {
       return todo;
     } else {
       return { message: 'todo not found wrong id.' };
     }
   }
+
   @Patch(':id')
   async update(@Param() idDto: IdDto, @Body() updateTodoDto: UpdateTodoDto) {
-    let todo = await this.todoService.update(idDto, updateTodoDto);
+    const todo = await this.todoService.update(idDto, updateTodoDto);
     if (todo) {
       return todo;
     } else {
       return { message: 'Todo not found' };
     }
   }
+
   @Delete(':id')
   async delete(@Param() idDto: IdDto) {
-    let todo = await this.todoService.delete(idDto);
+    const todo = await this.todoService.delete(idDto);
     if (todo) {
       return todo;
     } else {

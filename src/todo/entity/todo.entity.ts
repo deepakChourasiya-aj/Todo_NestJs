@@ -30,7 +30,7 @@ export class TodoEntity {
     return this.todoModel.findByIdAndUpdate(
       { _id: todoId },
       { ...todo },
-      { new: true }
+      { new: true },
     );
   }
 

@@ -10,7 +10,7 @@ export class TodoService {
   async create(createTodoDto: CreateTodoDto) {
     return this.todoEntity.create(createTodoDto);
   }
-  findAll(query: any) {
+  findAll() {
     return this.todoEntity.get('all');
   }
 
