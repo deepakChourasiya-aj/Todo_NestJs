@@ -13,7 +13,7 @@ console.log(process.env.DB_URL, 'DB URL');
       isGlobal: true,
     }),
     MongooseModule.forRoot(
-      'mongodb+srv://deepak1812002:deepakch@cluster0.xy0pfov.mongodb.net/todoApp?retryWrites=true&w=majority',
+      'mongodb+srv://JJKJKJ:HHHH@cluster0.xy0pfov.mongodb.net/todoApp?retryWrites=true&w=majority',
       {
         connectionName: 'todos',
       },
